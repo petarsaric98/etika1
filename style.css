@@ -1,0 +1,211 @@
+/* ===== Etika — 1. razred srednje škole | antička tema ===== */
+:root{
+  --plava:#1b3a5c;
+  --plava-svijetla:#2f5f8a;
+  --terakota:#c1553b;
+  --zlatna:#c99b2e;
+  --maslina:#6f7f4f;
+  --papirus:#faf5e9;
+  --papirus-tamni:#efe5d0;
+  --tinta:#23201b;
+  --siva:#6a6459;
+  --bijela:#fffdf8;
+  --sjena:0 2px 4px rgba(35,32,27,.06), 0 8px 24px rgba(35,32,27,.08);
+  --radius:14px;
+  --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.7;
+  color:var(--tinta);
+  background:var(--papirus);
+  background-image:radial-gradient(circle at 12% 6%, rgba(201,155,46,.12), transparent 45%),
+                   radial-gradient(circle at 90% 0%, rgba(27,58,92,.09), transparent 42%);
+  background-attachment:fixed;
+}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;color:var(--plava)}
+h1{font-size:clamp(2rem,5vw,3.1rem);margin:0 0 .3em}
+h2{font-size:clamp(1.5rem,3.5vw,2.1rem);margin:2.2em 0 .6em}
+h3{font-size:1.25rem;margin:1.6em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--terakota)}
+img{max-width:100%}
+
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+.wrap-wide{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---- gornja traka ---- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,245,233,.93);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--papirus-tamni);
+}
+.topbar-in{display:flex;align-items:center;gap:16px;justify-content:space-between;
+  max-width:1080px;margin:0 auto;padding:10px 20px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:700;color:var(--plava);text-decoration:none;font-size:1.05rem}
+.brand span{color:var(--terakota)}
+.topbar nav{display:flex;gap:18px;flex-wrap:wrap}
+.topbar nav a{color:var(--siva);text-decoration:none;font-size:.92rem}
+.topbar nav a:hover{color:var(--terakota)}
+
+/* ---- hero ---- */
+.hero{padding:70px 0 40px;text-align:center}
+.hero .eyebrow{
+  display:inline-block;letter-spacing:.18em;text-transform:uppercase;
+  font-size:.75rem;color:var(--terakota);font-weight:700;margin-bottom:14px}
+.hero .lead{font-size:1.15rem;color:var(--siva);max-width:640px;margin:0 auto}
+.meander{
+  height:14px;margin:26px auto 0;max-width:420px;
+  background:repeating-linear-gradient(90deg, var(--plava) 0 3px, transparent 3px 11px);
+  opacity:.3;border-radius:2px}
+
+/* ---- kartice ---- */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{
+  background:var(--bijela);border:1px solid var(--papirus-tamni);
+  border-radius:var(--radius);padding:22px;box-shadow:var(--sjena)}
+.card h3{margin-top:0}
+.card .ikona{font-size:1.9rem;line-height:1;display:block;margin-bottom:8px}
+
+.lekcija-card{
+  display:block;text-decoration:none;color:inherit;
+  background:var(--bijela);border:1px solid var(--papirus-tamni);
+  border-left:6px solid var(--terakota);
+  border-radius:var(--radius);padding:26px 28px;box-shadow:var(--sjena);
+  transition:transform .18s ease, box-shadow .18s ease}
+.lekcija-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(35,32,27,.15)}
+.lekcija-card .oznaka{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--terakota);font-weight:700}
+.lekcija-card h3{margin:.3em 0 .4em;font-size:1.5rem}
+.lekcija-card p{color:var(--siva);margin-bottom:14px}
+.lekcija-card .cta{font-weight:700;color:var(--plava)}
+.lekcija-card .cta::after{content:" \2192"}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:var(--papirus-tamni);color:var(--siva);border-radius:999px;
+  padding:4px 12px;font-size:.78rem}
+.card.uskoro{opacity:.7;border-left:6px solid var(--papirus-tamni)}
+
+/* ---- tablica usporedbe ---- */
+.tablica-scroll{overflow-x:auto;margin:20px 0}
+.usporedba{width:100%;border-collapse:collapse;background:var(--bijela);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--sjena);font-size:.97rem;min-width:520px}
+.usporedba th,.usporedba td{padding:14px 16px;text-align:left;vertical-align:top;
+  border-bottom:1px solid var(--papirus-tamni)}
+.usporedba thead th{background:var(--plava);color:#fff;font-family:var(--serif);font-size:1.05rem}
+.usporedba tbody th{font-weight:600;color:var(--siva);width:24%;font-family:var(--sans)}
+
+/* ---- istaknuti okviri ---- */
+.kutija{border-radius:var(--radius);padding:20px 24px;margin:26px 0;box-shadow:var(--sjena)}
+.kutija h3,.kutija h4{margin-top:0}
+.kutija.definicija{background:#fff;border-left:6px solid var(--plava)}
+.kutija.pitanje{background:#fdf2ee;border-left:6px solid var(--terakota)}
+.kutija.zanimljivost{background:#fbf6e6;border-left:6px solid var(--zlatna)}
+.kutija.zadatak{background:#f1f5ee;border-left:6px solid var(--maslina)}
+.kutija .nadnaslov{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--siva);display:block;margin-bottom:6px}
+
+blockquote{
+  margin:24px 0;padding:6px 0 6px 24px;border-left:4px solid var(--zlatna);
+  font-family:var(--serif);font-size:1.18rem;font-style:italic;color:var(--plava)}
+blockquote footer{font-size:.85rem;font-style:normal;color:var(--siva);font-family:var(--sans);margin-top:8px}
+
+details.akordeon{background:var(--bijela);border:1px solid var(--papirus-tamni);
+  border-radius:10px;padding:12px 18px;margin:12px 0;box-shadow:var(--sjena)}
+details.akordeon summary{cursor:pointer;font-weight:600;color:var(--plava);font-family:var(--serif);font-size:1.05rem}
+details.akordeon[open] summary{margin-bottom:8px}
+
+/* ---- interaktivno ---- */
+.btn{
+  display:inline-block;border:none;cursor:pointer;font:inherit;font-weight:600;
+  background:var(--plava);color:#fff;padding:11px 20px;border-radius:999px;
+  text-decoration:none;transition:background .15s ease, transform .15s ease}
+.btn:hover{background:var(--plava-svijetla);transform:translateY(-1px)}
+.btn.sek{background:transparent;color:var(--plava);border:2px solid var(--plava);padding:9px 18px}
+.btn.sek:hover{background:var(--plava);color:#fff}
+
+.izbor{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin:18px 0}
+.izbor button{
+  font:inherit;text-align:left;cursor:pointer;background:var(--bijela);
+  border:2px solid var(--papirus-tamni);border-radius:12px;padding:14px 16px;
+  transition:border-color .15s ease, background .15s ease}
+.izbor button:hover{border-color:var(--terakota)}
+.izbor button.aktivan{border-color:var(--terakota);background:#fdf2ee}
+.odgovor{display:none;margin-top:6px;padding:16px 18px;background:var(--papirus-tamni);
+  border-radius:12px;font-size:.97rem}
+.odgovor.vidljiv{display:block;animation:pojavi .25s ease}
+@keyframes pojavi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* razvrstavanje etika/moral */
+.sort-igra{background:var(--bijela);border:1px solid var(--papirus-tamni);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--sjena)}
+.tvrdnja{display:flex;gap:12px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;padding:12px 0;border-bottom:1px dashed var(--papirus-tamni)}
+.tvrdnja:last-of-type{border-bottom:none}
+.tvrdnja .t{flex:1 1 260px}
+.tvrdnja .gumbi{display:flex;gap:8px}
+.tvrdnja .gumbi button{font:inherit;cursor:pointer;border:2px solid var(--papirus-tamni);
+  background:var(--papirus);border-radius:999px;padding:6px 16px;font-size:.9rem}
+.tvrdnja .gumbi button:hover{border-color:var(--plava-svijetla)}
+.tvrdnja.tocno .gumbi button.odabran{background:#e6f3e8;border-color:#3f8a4f}
+.tvrdnja.netocno .gumbi button.odabran{background:#fbe9e6;border-color:var(--terakota)}
+.tvrdnja .povratna{flex-basis:100%;font-size:.88rem;color:var(--siva);display:none}
+.tvrdnja .povratna.vidljiv{display:block}
+
+/* kviz */
+.kviz{background:var(--bijela);border-radius:var(--radius);padding:8px 26px 26px;
+  box-shadow:var(--sjena);border:1px solid var(--papirus-tamni)}
+.pitanje-blok{padding:18px 0;border-bottom:1px dashed var(--papirus-tamni)}
+.pitanje-blok:last-of-type{border-bottom:none}
+.pitanje-blok p.tekst{font-weight:600;margin-bottom:10px}
+.opcije{display:flex;flex-direction:column;gap:8px}
+.opcije button{
+  font:inherit;text-align:left;cursor:pointer;background:var(--papirus);
+  border:2px solid transparent;border-radius:10px;padding:10px 14px}
+.opcije button:hover{border-color:var(--plava-svijetla)}
+.opcije button.tocno{background:#e6f3e8;border-color:#3f8a4f}
+.opcije button.netocno{background:#fbe9e6;border-color:var(--terakota)}
+.objasnjenje{display:none;margin-top:10px;font-size:.93rem;color:var(--siva);
+  border-left:3px solid var(--zlatna);padding-left:12px}
+.objasnjenje.vidljiv{display:block}
+.rezultat{margin-top:18px;font-family:var(--serif);font-size:1.15rem;color:var(--plava);font-weight:700}
+
+/* mit blokovi */
+.mit{
+  display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;
+  background:var(--bijela);border:1px solid var(--papirus-tamni);border-radius:var(--radius);
+  padding:22px 24px;margin:18px 0;box-shadow:var(--sjena)}
+.mit .simbol{font-size:2.3rem;line-height:1.1;text-align:center}
+.mit h3{margin-top:0}
+.mit .pojam{display:inline-block;background:var(--plava);color:#fff;border-radius:999px;
+  padding:3px 12px;font-size:.75rem;letter-spacing:.04em;margin-bottom:8px}
+@media(max-width:520px){
+  .mit{grid-template-columns:1fr}
+  .mit .simbol{text-align:left}
+}
+
+/* sadržaj lekcije */
+ol.sadrzaj{counter-reset:s;list-style:none;padding:0;margin:18px 0}
+ol.sadrzaj li{counter-increment:s;padding:9px 0 9px 44px;position:relative;border-bottom:1px solid var(--papirus-tamni)}
+ol.sadrzaj li::before{
+  content:counter(s);position:absolute;left:0;top:8px;width:28px;height:28px;
+  background:var(--plava);color:#fff;border-radius:50%;display:grid;place-items:center;
+  font-size:.85rem;font-weight:700;font-family:var(--sans)}
+ol.sadrzaj a{color:var(--plava);text-decoration:none}
+ol.sadrzaj a:hover{color:var(--terakota)}
+
+footer.podnozje{margin-top:70px;padding:34px 0;background:var(--plava);color:#cfd9e4;
+  font-size:.9rem;text-align:center}
+footer.podnozje a{color:#fff}
+
+.povratak{display:inline-block;margin:26px 0 0;color:var(--siva);text-decoration:none;font-size:.92rem}
+.povratak::before{content:"\2190  "}
+.povratak:hover{color:var(--terakota)}
+
+hr.razdjelnik{border:none;height:1px;background:var(--papirus-tamni);margin:44px 0}
