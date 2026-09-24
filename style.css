@@ -209,3 +209,14 @@ footer.podnozje a{color:#fff}
 .povratak:hover{color:var(--terakota)}
 
 hr.razdjelnik{border:none;height:1px;background:var(--papirus-tamni);margin:44px 0}
+
+/* prekidač jezika */
+.topbar nav a.jezik{border:1px solid var(--papirus-tamni);border-radius:999px;padding:0 10px;
+  font-weight:700;letter-spacing:.06em;color:var(--plava)}
+.topbar nav a.jezik:hover{border-color:var(--terakota)}
+
+/* video */
+.video{position:relative;aspect-ratio:16/9;margin:18px 0;border-radius:12px;overflow:hidden;
+  background:var(--tinta);box-shadow:var(--sjena)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-izvor{font-size:.85rem;color:var(--siva);margin-top:-8px}
